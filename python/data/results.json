@@ -1,0 +1,5 @@
+[
+  {"hostname": "intranet", "ip_address": "127.0.0.1", "service": "http", "port": 8080, "state": "OPEN", "response_time": 0.002},
+  {"hostname": "fileserver", "ip_address": "127.0.0.1", "service": "http", "port": 8081, "state": "OPEN", "response_time": 0.003},
+  {"hostname": "warehouse-app", "ip_address": "127.0.0.1", "service": "wms", "port": 9000, "state": "OPEN", "response_time": 0.001}
+]
