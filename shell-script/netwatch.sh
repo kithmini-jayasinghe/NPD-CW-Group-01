@@ -3,7 +3,7 @@
 # netwatch.sh — NetWatch Part A: reads a device inventory, checks host
 #               reachability, records history, and produces a report.
 #
-# Authors: <Member 1 name>, <Member 2 name (Ken)>, <Member 3 name>, <Member 4 name>
+# Authors: Kendra, Kithmini, Swetha, Dinol
 # Date:    2026-09-24
 #
 # Usage:
