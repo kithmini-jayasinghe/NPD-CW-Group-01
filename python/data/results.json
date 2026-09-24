@@ -1,5 +1,7 @@
 [
   {"hostname": "intranet", "ip_address": "127.0.0.1", "service": "http", "port": 8080, "state": "OPEN", "response_time": 0.002},
   {"hostname": "fileserver", "ip_address": "127.0.0.1", "service": "http", "port": 8081, "state": "OPEN", "response_time": 0.003},
-  {"hostname": "warehouse-app", "ip_address": "127.0.0.1", "service": "wms", "port": 9000, "state": "OPEN", "response_time": 0.001}
+  {"hostname": "warehouse-app", "ip_address": "127.0.0.1", "service": "wms", "port": 9000, "state": "OPEN", "response_time": 0.001},
+  {"hostname": "branch-gw", "ip_address": "192.168.56.20", "service": "http", "port": 80, "state": "CLOSED", "response_time": 0.000},
+  {"hostname": "bad-host", "ip_address": "127.0.0.1", "service": "badservice", "port": 99999, "state": "ERROR", "response_time": 0.000}
 ]
