@@ -1,0 +1,10 @@
+[2026-09-24 16:30:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-24 16:30:02] INFO: Run complete — 1 record written to /home/kendra/projects/NPD-CW-Group-01/shell-script/data/history.csv
+[2026-09-24 16:31:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-24 16:31:01] INFO: Run complete — 1 record written to /home/kendra/projects/NPD-CW-Group-01/shell-script/data/history.csv
+[2026-09-24 16:32:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-24 16:32:01] INFO: Run complete — 1 record written to /home/kendra/projects/NPD-CW-Group-01/shell-script/data/history.csv
+[2026-09-24 16:33:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-24 16:33:01] INFO: Run complete — 1 record written to /home/kendra/projects/NPD-CW-Group-01/shell-script/data/history.csv
+[2026-09-24 17:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-24 17:00:01] INFO: Run complete — 1 record written to /home/kendra/projects/NPD-CW-Group-01/shell-script/data/history.csv
