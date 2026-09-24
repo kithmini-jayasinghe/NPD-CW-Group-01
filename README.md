@@ -51,8 +51,11 @@ documentation/
 
 ## Setting up your test estate
 
-Before running anything, start the dummy services the inventory expects.
-[Member 4 — add your estate simulation script/commands here, e.g.:]
+Before running the monitoring pipeline, start the background HTTP servers to simulate Serendib Logistics' services:
+
+python3 -m http.server 8080 &
+python3 -m http.server 8081 &
+python3 -m http.server 9000 &
 
 ```bash
 # Example — replace with actual startup commands
@@ -107,13 +110,16 @@ python3 netwatch.py [TODO: add actual arguments]
 
 ```bash
 cd python
-python3 status_server.py [TODO: add port argument etc.]
-```
+python3 status_server.py 
+
+The service listens on http://127.0.0.1:8888.
+
+To query the service status using the custom socket client
+python3 status_client.py
 
 To check status with the socket client (Group 1 only):
 ```bash
 python3 status_client.py [TODO: add host/port arguments]
-```
 
 ## The inventory file
 
