@@ -1,0 +1,7 @@
+hostname,ip_address,service,port,critical
+intranet,127.0.0.1,http,8080,yes
+warehouse-app,127.0.0.1,wms,9000,yes
+fileserver,127.0.0.1,http,8081,no
+backup-server,127.0.0.1,ftp,9090,no
+printer-svc,127.0.0.1,http,9091,no
+offline-host,127.0.0.1,http,9999,no
