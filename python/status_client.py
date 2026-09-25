@@ -1,16 +1,14 @@
 import socket
 import sys
+import argparse
 
-HOST = "127.0.0.1"
-PORT = 8888
-
-def fetch_status():
+def fetch_status(host, port):
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.settimeout(3.0)
     
     try:
-        print(f"Connecting to NetWatch status server at {HOST}:{PORT}...")
-        client.connect((HOST, PORT))
+        print(f"Connecting to NetWatch status server at {host}:{port}...")
+        client.connect((host, port))
         
         # Send HTTP GET request
         request = "GET / HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n"
@@ -30,17 +28,21 @@ def fetch_status():
         print("-----------------------------\n")
         
     except ConnectionRefusedError:
-        print(f"Error: Connection refused. Is status_server.py running on port {PORT}?")
+        print(f"Error: Connection refused. Is status_server.py running on port {port}?")
         sys.exit(1)
     except socket.timeout:
-        print(f"Error: Connection to {HOST}:{PORT} timed out.")
+        print(f"Error: Connection to {host}:{port} timed out.")
         sys.exit(1)
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    except (OSError, UnicodeDecodeError) as error:
+        print(f"An error occurred: {error}")
         sys.exit(1)
     finally:
         client.close()
         print("Socket connection closed cleanly.")
 
 if __name__ == "__main__":
-    fetch_status()
+    parser = argparse.ArgumentParser(description="Read the NetWatch status page")
+    parser.add_argument("--host", default="127.0.0.1")
+    parser.add_argument("--port", type=int, default=8888)
+    args = parser.parse_args()
+    fetch_status(args.host, args.port)
