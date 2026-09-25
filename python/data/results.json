@@ -1,7 +1,68 @@
 [
-  {"hostname": "intranet", "ip_address": "127.0.0.1", "service": "http", "port": 8080, "state": "OPEN", "response_time": 0.002},
-  {"hostname": "fileserver", "ip_address": "127.0.0.1", "service": "http", "port": 8081, "state": "OPEN", "response_time": 0.003},
-  {"hostname": "warehouse-app", "ip_address": "127.0.0.1", "service": "wms", "port": 9000, "state": "OPEN", "response_time": 0.001},
-  {"hostname": "branch-gw", "ip_address": "192.168.56.20", "service": "http", "port": 80, "state": "CLOSED", "response_time": 0.000},
-  {"hostname": "bad-host", "ip_address": "127.0.0.1", "service": "badservice", "port": 99999, "state": "ERROR", "response_time": 0.000}
+  {
+    "hostname": "intranet",
+    "ip_address": "127.0.0.1",
+    "service": "http",
+    "port": 8080,
+    "critical": "yes",
+    "state": "TIMEOUT",
+    "response_time": 1.048442,
+    "timestamp": "2026-09-25T06:15:07.042+00:00",
+    "error": "Connection timed out: timed out"
+  },
+  {
+    "hostname": "fileserver",
+    "ip_address": "127.0.0.1",
+    "service": "http",
+    "port": 8081,
+    "critical": "no",
+    "state": "TIMEOUT",
+    "response_time": 1.030795,
+    "timestamp": "2026-09-25T06:15:07.041+00:00",
+    "error": "Connection timed out: timed out"
+  },
+  {
+    "hostname": "warehouse-app",
+    "ip_address": "127.0.0.1",
+    "service": "wms",
+    "port": 9000,
+    "critical": "yes",
+    "state": "TIMEOUT",
+    "response_time": 1.046698,
+    "timestamp": "2026-09-25T06:15:07.042+00:00",
+    "error": "Connection timed out: timed out"
+  },
+  {
+    "hostname": "backup-server",
+    "ip_address": "127.0.0.1",
+    "service": "ftp",
+    "port": 9090,
+    "critical": "no",
+    "state": "TIMEOUT",
+    "response_time": 1.045536,
+    "timestamp": "2026-09-25T06:15:07.042+00:00",
+    "error": "Connection timed out: timed out"
+  },
+  {
+    "hostname": "printer-svc",
+    "ip_address": "127.0.0.1",
+    "service": "http",
+    "port": 9091,
+    "critical": "no",
+    "state": "TIMEOUT",
+    "response_time": 1.045073,
+    "timestamp": "2026-09-25T06:15:07.042+00:00",
+    "error": "Connection timed out: timed out"
+  },
+  {
+    "hostname": "offline-host",
+    "ip_address": "127.0.0.1",
+    "service": "http",
+    "port": 9999,
+    "critical": "no",
+    "state": "TIMEOUT",
+    "response_time": 1.044109,
+    "timestamp": "2026-09-25T06:15:07.041+00:00",
+    "error": "Connection timed out: timed out"
+  }
 ]
