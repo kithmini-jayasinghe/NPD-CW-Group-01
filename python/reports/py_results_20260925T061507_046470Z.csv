@@ -1,0 +1,7 @@
+timestamp,hostname,ip_address,service,port,critical,state,response_time,error
+2026-09-25T06:15:07.042+00:00,intranet,127.0.0.1,http,8080,yes,TIMEOUT,1.048442,Connection timed out: timed out
+2026-09-25T06:15:07.041+00:00,fileserver,127.0.0.1,http,8081,no,TIMEOUT,1.030795,Connection timed out: timed out
+2026-09-25T06:15:07.042+00:00,warehouse-app,127.0.0.1,wms,9000,yes,TIMEOUT,1.046698,Connection timed out: timed out
+2026-09-25T06:15:07.042+00:00,backup-server,127.0.0.1,ftp,9090,no,TIMEOUT,1.045536,Connection timed out: timed out
+2026-09-25T06:15:07.042+00:00,printer-svc,127.0.0.1,http,9091,no,TIMEOUT,1.045073,Connection timed out: timed out
+2026-09-25T06:15:07.041+00:00,offline-host,127.0.0.1,http,9999,no,TIMEOUT,1.044109,Connection timed out: timed out
