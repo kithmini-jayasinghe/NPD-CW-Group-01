@@ -1,0 +1,7 @@
+timestamp,hostname,ip_address,service,port,critical,state,response_time,error_detail
+2026-09-25T12:57:44+05:30,backup-server,127.0.0.2,ftp,9090,no,ERROR,1.0009,Unknown error
+2026-09-25T12:57:44+05:30,fileserver,127.0.0.1,http,8081,no,ERROR,1.0022,Unknown error
+2026-09-25T12:57:44+05:30,intranet,127.0.0.1,http,8080,yes,OPEN,0.0024,
+2026-09-25T12:57:44+05:30,offline-host,127.0.0.4,http,9999,no,ERROR,0.9988,Unknown error
+2026-09-25T12:57:44+05:30,printer-svc,127.0.0.3,http,9091,no,ERROR,0.9991,Unknown error
+2026-09-25T12:57:44+05:30,warehouse-app,127.0.0.1,wms,9000,yes,ERROR,1.0034,Unknown error
