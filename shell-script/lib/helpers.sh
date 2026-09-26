@@ -24,6 +24,13 @@ log_error() {
     printf '[%s] ERROR: %s\n' "$(date '+%Y-%m-%d %H:%M:%S')" "${message}" >&2
 }
 
+trim() {
+    local value="$1"
+    value="${value#"${value%%[![:space:]]*}"}"
+    value="${value%"${value##*[![:space:]]}"}"
+    printf '%s' "${value}"
+}
+
 # write_history HISTORY_FILE HOSTNAME ADDRESS SERVICE PORT STATUS [RTT]
 #   Appends one timestamped record to the history CSV.
 #   Format: timestamp,hostname,address,service,port,status,rtt
@@ -41,4 +48,18 @@ write_history() {
     printf '%s,%s,%s,%s,%s,%s,%s\n' \
         "${timestamp}" "${hostname}" "${address}" "${service}" "${port}" "${status}" "${rtt}" \
         >> "${history_file}"
+}
+
+ping_host() {
+    local address="$1"
+    local timeout="$2"
+    local output
+    local rtt=""
+
+    if output="$(ping -c 1 -W "${timeout}" "${address}" 2>/dev/null)"; then
+        rtt="$(printf '%s\n' "${output}" | sed -n 's/.*time=\([^ ]*\).*/\1/p' | head -n 1)"
+        printf 'UP|%s\n' "${rtt:-unknown}"
+    else
+        printf 'DOWN|\n'
+    fi
 }
