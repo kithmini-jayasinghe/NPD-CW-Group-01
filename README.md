@@ -35,11 +35,12 @@ shell-script/
   data/              — history.csv (generated, not committed)
   logs/              — netwatch.log, cron.log (generated, not committed)
   reports/           — generated CSV reports (generated, not committed)
-python/
-  netwatch.py        — Part B entry point
-  status_server.py   — publishes current status over HTTP
-  status_client.py   — [Group 1 only] retrieves published status via socket
-  data/, logs/, reports/  — generated, not committed
+  python/
+    netwatch.py        — Part B entry point
+    status_server.py   — publishes current status over HTTP
+    status_client.py   — Group 1 socket client
+  data/                — Part B results.json
+  reports/             — Part B and consolidated reports
 evidence/
   screenshots/       — test case evidence, named by test case ID
   crontab_evidence.txt
@@ -53,14 +54,13 @@ documentation/
 
 Before running the monitoring pipeline, start the background HTTP servers to simulate Serendib Logistics' services:
 
+```bash
 python3 -m http.server 8080 &
 python3 -m http.server 8081 &
 python3 -m http.server 9000 &
+```
 
-```bash
-# Example — replace with actual startup commands
-python3 -m http.server 8080 &
-python3 -m http.server 8081 &
+On Windows, use separate terminals and run `python -m http.server PORT`.
 ```
 
 ## Running Part A — netwatch.sh
@@ -97,52 +97,61 @@ Evidence of a scheduled run is in `evidence/crontab_evidence.txt` and
 
 ## Running Part B — netwatch.py
 
-[Member 3 — add usage instructions here: modes, arguments, defaults]
+Run from the repository root. The default inventory is the shared file under
+`shell-script/config/`; results are written to `data/results.json` and reports
+to `reports/`.
 
 ```bash
-cd python
-python3 netwatch.py [TODO: add actual arguments]
+python3 python/netwatch.py --mode sequential --timeout 2
+python3 python/netwatch.py --mode concurrent --timeout 2 --workers 10
+python3 python/netwatch.py --mode benchmark --timeout 2 --workers 10
 ```
+
+Useful options are `--inventory PATH`, `--output-dir PATH`, and
+`--report-dir PATH`. Exit code 0 means all services are open, 1 means at least
+one service is unavailable, 2 means invalid arguments, and 3 means a file or
+data error.
 
 ## Running the status service
 
-[Member 4 — add usage instructions here]
+```bash
+python3 python/status_server.py --host 127.0.0.1 --port 8888 --results data/results.json
+```
+
+The service listens on `http://127.0.0.1:8888` and logs each request.
+
+To query it using the Group 1 socket client:
 
 ```bash
-cd python
-python3 status_server.py 
-
-The service listens on http://127.0.0.1:8888.
-
-To query the service status using the custom socket client
-python3 status_client.py
-
-To check status with the socket client (Group 1 only):
-```bash
-python3 status_client.py [TODO: add host/port arguments]
+python3 python/status_client.py --host 127.0.0.1 --port 8888
+```
 
 ## The inventory file
 
-Both components read `config/inventory.csv`:
+Both components read `shell-script/config/inventory.csv`:
 ```
 hostname,ip_address,service,port,critical
 intranet,127.0.0.1,http,8080,yes
 warehouse-app,127.0.0.1,wms,9000,yes
 ...
 ```
-See `config/inventory.csv` for the current version. **Note:** this is
-currently a draft — see the team status document for an open question
-about address diversity.
+See `shell-script/config/inventory.csv` for the current version. Both tools
+reject malformed rows individually and continue with valid rows.
 
 ## Testing
 
 Test cases are documented in `Documentation/Coursework_Report.pdf`
 (Testing and Results section) with evidence in `evidence/screenshots/`.
-To verify the shell script independently:
+To verify the shell script independently on Linux, WSL, or Git Bash:
 ```bash
 cd shell-script
 shellcheck -x netwatch.sh lib/helpers.sh
 ```
+
+The submitted inventory deliberately contains six local targets: one open
+service when the test server is running, several unused ports, and an
+unavailable service. All targets are within the authorised `127.0.0.1` test
+boundary.
 
 ## AI use declaration
 
