@@ -23,6 +23,16 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=lib/helpers.sh
 source "${SCRIPT_DIR}/lib/helpers.sh"
 
+TMP_REPORT=""
+# shellcheck disable=SC2329
+cleanup_on_signal() {
+    echo "" >&2
+    echo "Interrupted — cleaning up..." >&2
+    [[ -n "${TMP_REPORT}" && -f "${TMP_REPORT}" ]] && rm -f "${TMP_REPORT}"
+    exit 130
+}
+trap cleanup_on_signal INT TERM
+
 # --- Defaults (documented above in the usage block) ---
 INVENTORY_PATH="${SCRIPT_DIR}/config/inventory.csv"
 OUTPUT_DIR="${SCRIPT_DIR}/reports"
@@ -180,7 +190,7 @@ if [[ "${REPORT_ONLY}" -eq 0 ]]; then
         if [[ "${python_status}" -gt 1 ]]; then
             log_error "Python service scan failed with exit code ${python_status}"
         fi
-        python_report="$(ls -1t "${PYTHON_REPORT_DIR}"/py_results_*.csv 2>/dev/null | head -n 1 || true)"
+        python_report="$(find "${PYTHON_REPORT_DIR}" -maxdepth 1 -name 'py_results_*.csv' -printf '%T@ %p\n' 2>/dev/null | sort -rn | head -n 1 | cut -d' ' -f2-)"
     fi
 else
     log_info "Report-only mode: existing history will be reported"
@@ -188,7 +198,8 @@ fi
 
 # --- Main run ---
 report_path="${OUTPUT_DIR}/netwatch_$(date '+%Y%m%dT%H%M%S').csv"
-printf 'timestamp,hostname,ip_address,service,port,status,rtt,python_state,python_response_time\n' > "${report_path}"
+TMP_REPORT="${report_path}.tmp"
+printf 'timestamp,hostname,ip_address,service,port,status,rtt,python_state,python_response_time\n' > "${TMP_REPORT}"
 if [[ -s "${HISTORY_FILE}" ]]; then
     while IFS=',' read -r timestamp hostname address service port status rtt; do
         python_state=""
@@ -199,9 +210,11 @@ if [[ -s "${HISTORY_FILE}" ]]; then
                 IFS=',' read -r _ _ _ _ _ _ python_state python_time _ <<< "${python_row}"
             fi
         fi
-        printf '%s,%s,%s,%s,%s,%s,%s,%s,%s\n' "${timestamp}" "${hostname}" "${address}" "${service}" "${port}" "${status}" "${rtt}" "${python_state}" "${python_time}" >> "${report_path}"
+        printf '%s,%s,%s,%s,%s,%s,%s,%s,%s\n' "${timestamp}" "${hostname}" "${address}" "${service}" "${port}" "${status}" "${rtt}" "${python_state}" "${python_time}" >> "${TMP_REPORT}"
     done < "${HISTORY_FILE}"
 fi
+mv "${TMP_REPORT}" "${report_path}"
+TMP_REPORT=""
 printf '\n%-22s %-16s %-8s %-8s %-8s\n' 'HOSTNAME' 'ADDRESS' 'STATUS' 'SERVICE' 'PORT'
 if [[ -s "${HISTORY_FILE}" ]]; then
     tail -n 6 "${HISTORY_FILE}" | while IFS=',' read -r timestamp hostname address service port status rtt; do

@@ -35,3 +35,29 @@
 [2026-09-25 13:27:50] INFO: Run complete — report written to /d/NIBM - HNDNE252 F/Network Programming Design (NPD)/Coursework/NPD-CW-Group-01/shell-script/reports/netwatch_20260925T132746.csv
 [2026-09-25 13:28:53] INFO: netwatch.sh starting — inventory=/d/NIBM - HNDNE252 F/Network Programming Design (NPD)/Coursework/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=1s report_only=0
 [2026-09-25 13:29:01] INFO: Run complete — report written to /d/NIBM - HNDNE252 F/Network Programming Design (NPD)/Coursework/NPD-CW-Group-01/shell-script/reports/netwatch_20260925T132857.csv
+[2026-09-27 09:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-27 09:00:02] INFO: Run complete — report written to /home/kendra/projects/NPD-CW-Group-01/shell-script/reports/netwatch_20260927T090002.csv
+[2026-09-27 13:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-27 13:00:02] INFO: Run complete — report written to /home/kendra/projects/NPD-CW-Group-01/shell-script/reports/netwatch_20260927T130001.csv
+[2026-09-27 13:31:45] INFO: netwatch.sh starting — inventory=config/inventory.csv timeout=2s report_only=0
+[2026-09-27 13:31:46] INFO: Run complete — report written to reports/netwatch_20260927T133146.csv
+[2026-09-27 13:41:32] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=1
+[2026-09-27 13:41:33] INFO: Run complete — report written to report-only/netwatch_20260927T134132.csv
+[2026-09-27 13:56:50] INFO: netwatch.sh starting — inventory=config/inventory.csv timeout=5s report_only=0
+[2026-09-27 13:56:51] INFO: Run complete — report written to reports/netwatch_20260927T135651.csv
+[2026-09-27 14:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-27 14:00:02] INFO: Run complete — report written to /home/kendra/projects/NPD-CW-Group-01/shell-script/reports/netwatch_20260927T140001.csv
+[2026-09-27 14:14:34] INFO: netwatch.sh starting — inventory=/tmp/inventory_hang_test.csv timeout=30s report_only=0
+[2026-09-27 14:14:35] INFO: Run complete — report written to reports/netwatch_20260927T141435.csv
+[2026-09-27 14:16:45] INFO: netwatch.sh starting — inventory=/tmp/inventory_hang_test.csv timeout=30s report_only=0
+[2026-09-27 14:31:14] INFO: netwatch.sh starting — inventory=/tmp/inventory_hang_only.csv timeout=30s report_only=0
+[2026-09-27 14:32:15] INFO: Run complete — report written to reports/netwatch_20260927T143214.csv
+[2026-09-27 14:35:43] INFO: netwatch.sh starting — inventory=/tmp/inventory_hang_only.csv timeout=5s report_only=0
+[2026-09-27 14:35:54] INFO: Run complete — report written to reports/netwatch_20260927T143553.csv
+[2026-09-27 15:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-27 15:00:02] INFO: Run complete — report written to /home/kendra/projects/NPD-CW-Group-01/shell-script/reports/netwatch_20260927T150002.csv
+[2026-09-27 15:51:03] INFO: netwatch.sh starting — inventory=/tmp/inventory_hang_only.csv timeout=30s report_only=0
+[2026-09-27 16:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-27 16:00:02] INFO: Run complete — report written to /home/kendra/projects/NPD-CW-Group-01/shell-script/reports/netwatch_20260927T160002.csv
+[2026-09-27 17:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-27 17:00:02] INFO: Run complete — report written to /home/kendra/projects/NPD-CW-Group-01/shell-script/reports/netwatch_20260927T170002.csv
