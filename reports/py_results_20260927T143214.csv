@@ -1,0 +1,3 @@
+timestamp,hostname,ip_address,service,port,critical,state,response_time,error_detail
+2026-09-27T14:31:44+05:30,hang-host,10.255.255.1,http,8080,no,ERROR,30.0327,Resource temporarily unavailable
+2026-09-27T14:31:44+05:30,intranet,127.0.0.1,http,8080,yes,CLOSED,0.0012,connection refused

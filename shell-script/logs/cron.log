@@ -8,3 +8,312 @@
 [2026-09-24 16:33:01] INFO: Run complete — 1 record written to /home/kendra/projects/NPD-CW-Group-01/shell-script/data/history.csv
 [2026-09-24 17:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
 [2026-09-24 17:00:01] INFO: Run complete — 1 record written to /home/kendra/projects/NPD-CW-Group-01/shell-script/data/history.csv
+[2026-09-27 09:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-27 09:00:01] INFO: intranet (127.0.0.1) is UP
+[2026-09-27 09:00:02] INFO: warehouse-app (127.0.0.1) is UP
+[2026-09-27 09:00:02] INFO: fileserver (127.0.0.1) is UP
+[2026-09-27 09:00:02] INFO: backup-server (127.0.0.1) is UP
+[2026-09-27 09:00:02] INFO: printer-svc (127.0.0.1) is UP
+[2026-09-27 09:00:02] INFO: offline-host (127.0.0.1) is UP
+[2026-09-27 09:00:02] INFO: Inventory: 6 accepted, 0 rejected
+[2026-09-27T09:00:02] inventory loaded: 6 accepted, 0 rejected
+[2026-09-27T09:00:02] previous results loaded
+[2026-09-27T09:00:02] report written: /home/kendra/projects/NPD-CW-Group-01/shell-script/../reports/py_results_20260927T090002.csv
+
+HOSTNAME        SERVICE   PORT    STATE   RESP(s)   
+----------------------------------------------------
+backup-server   ftp       9090    CLOSED  0.0026    
+fileserver      http      8081    CLOSED  0.0026    
+intranet        http      8080    OPEN    0.0043    
+offline-host    http      9999    CLOSED  0.0008    
+printer-svc     http      9091    CLOSED  0.0005    
+warehouse-app   wms       9000    CLOSED  0.0026    
+
+Checked 6 target(s): 1 open, 5 closed, 0 error (16.7% available)
+
+Newly opened : []
+Newly closed : []
+Unchanged    : 1 service(s) (compared against previous run)
+Other changes: [('127.0.0.1', 8081), ('127.0.0.1', 9000), ('127.0.0.1', 9090), ('127.0.0.1', 9091), ('127.0.0.1', 9999)]
+
+STATUS: ISSUES DETECTED (exit code 1)
+
+HOSTNAME               ADDRESS          STATUS   SERVICE  PORT    
+intranet               127.0.0.1        UP       http     8080    
+warehouse-app          127.0.0.1        UP       wms      9000    
+fileserver             127.0.0.1        UP       http     8081    
+backup-server          127.0.0.1        UP       ftp      9090    
+printer-svc            127.0.0.1        UP       http     9091    
+offline-host           127.0.0.1        UP       http     9999    
+
+Checks: 48 | UP: 12 | DOWN: 36 | Availability: 25.0%
+Availability by host:
+  backup-server          25.0% (2/8)
+  fileserver             25.0% (2/8)
+  intranet               25.0% (2/8)
+  offline-host           25.0% (2/8)
+  printer-svc            25.0% (2/8)
+  warehouse-app          25.0% (2/8)
+Most frequent failing services:
+  http               24 failures
+  wms                6 failures
+  ftp                6 failures
+[2026-09-27 09:00:02] INFO: Run complete — report written to /home/kendra/projects/NPD-CW-Group-01/shell-script/reports/netwatch_20260927T090002.csv
+[2026-09-27 13:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-27 13:00:01] INFO: intranet (127.0.0.1) is UP
+[2026-09-27 13:00:01] INFO: warehouse-app (127.0.0.1) is UP
+[2026-09-27 13:00:01] INFO: fileserver (127.0.0.1) is UP
+[2026-09-27 13:00:01] INFO: backup-server (127.0.0.1) is UP
+[2026-09-27 13:00:01] INFO: printer-svc (127.0.0.1) is UP
+[2026-09-27 13:00:01] INFO: offline-host (127.0.0.1) is UP
+[2026-09-27 13:00:01] INFO: Inventory: 6 accepted, 0 rejected
+[2026-09-27T13:00:01] inventory loaded: 6 accepted, 0 rejected
+[2026-09-27T13:00:01] previous results loaded
+[2026-09-27T13:00:01] report written: /home/kendra/projects/NPD-CW-Group-01/shell-script/../reports/py_results_20260927T130001.csv
+
+HOSTNAME        SERVICE   PORT    STATE   RESP(s)   
+----------------------------------------------------
+backup-server   ftp       9090    CLOSED  0.0031    
+fileserver      http      8081    CLOSED  0.0026    
+intranet        http      8080    OPEN    0.0018    
+offline-host    http      9999    CLOSED  0.0021    
+printer-svc     http      9091    CLOSED  0.0028    
+warehouse-app   wms       9000    CLOSED  0.0044    
+
+Checked 6 target(s): 1 open, 5 closed, 0 error (16.7% available)
+
+Newly opened : []
+Newly closed : []
+Unchanged    : 6 service(s) (compared against previous run)
+Other changes: []
+
+STATUS: ISSUES DETECTED (exit code 1)
+
+HOSTNAME               ADDRESS          STATUS   SERVICE  PORT    
+intranet               127.0.0.1        UP       http     8080    
+warehouse-app          127.0.0.1        UP       wms      9000    
+fileserver             127.0.0.1        UP       http     8081    
+backup-server          127.0.0.1        UP       ftp      9090    
+printer-svc            127.0.0.1        UP       http     9091    
+offline-host           127.0.0.1        UP       http     9999    
+
+Checks: 54 | UP: 18 | DOWN: 36 | Availability: 33.3%
+Availability by host:
+  backup-server          33.3% (3/9)
+  fileserver             33.3% (3/9)
+  intranet               33.3% (3/9)
+  offline-host           33.3% (3/9)
+  printer-svc            33.3% (3/9)
+  warehouse-app          33.3% (3/9)
+Most frequent failing services:
+  http               24 failures
+  wms                6 failures
+  ftp                6 failures
+[2026-09-27 13:00:02] INFO: Run complete — report written to /home/kendra/projects/NPD-CW-Group-01/shell-script/reports/netwatch_20260927T130001.csv
+[2026-09-27 14:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-27 14:00:01] INFO: intranet (127.0.0.1) is UP
+[2026-09-27 14:00:01] INFO: warehouse-app (127.0.0.1) is UP
+[2026-09-27 14:00:01] INFO: fileserver (127.0.0.1) is UP
+[2026-09-27 14:00:01] INFO: backup-server (127.0.0.1) is UP
+[2026-09-27 14:00:01] INFO: printer-svc (127.0.0.1) is UP
+[2026-09-27 14:00:01] INFO: offline-host (127.0.0.1) is UP
+[2026-09-27 14:00:01] INFO: Inventory: 6 accepted, 0 rejected
+[2026-09-27T14:00:01] inventory loaded: 6 accepted, 0 rejected
+[2026-09-27T14:00:01] previous results loaded
+[2026-09-27T14:00:01] report written: /home/kendra/projects/NPD-CW-Group-01/shell-script/../reports/py_results_20260927T140001.csv
+
+HOSTNAME        SERVICE   PORT    STATE   RESP(s)   
+----------------------------------------------------
+backup-server   ftp       9090    CLOSED  0.0005    
+fileserver      http      8081    CLOSED  0.0012    
+intranet        http      8080    CLOSED  0.0021    
+offline-host    http      9999    CLOSED  0.0003    
+printer-svc     http      9091    CLOSED  0.0009    
+warehouse-app   wms       9000    CLOSED  0.0006    
+
+Checked 6 target(s): 0 open, 6 closed, 0 error (0.0% available)
+
+Newly opened : []
+Newly closed : []
+Unchanged    : 6 service(s) (compared against previous run)
+Other changes: []
+
+STATUS: ISSUES DETECTED (exit code 1)
+
+HOSTNAME               ADDRESS          STATUS   SERVICE  PORT    
+intranet               127.0.0.1        UP       http     8080    
+warehouse-app          127.0.0.1        UP       wms      9000    
+fileserver             127.0.0.1        UP       http     8081    
+backup-server          127.0.0.1        UP       ftp      9090    
+printer-svc            127.0.0.1        UP       http     9091    
+offline-host           127.0.0.1        UP       http     9999    
+
+Checks: 72 | UP: 36 | DOWN: 36 | Availability: 50.0%
+Availability by host:
+  backup-server          50.0% (6/12)
+  fileserver             50.0% (6/12)
+  intranet               50.0% (6/12)
+  offline-host           50.0% (6/12)
+  printer-svc            50.0% (6/12)
+  warehouse-app          50.0% (6/12)
+Most frequent failing services:
+  http               24 failures
+  wms                6 failures
+  ftp                6 failures
+[2026-09-27 14:00:02] INFO: Run complete — report written to /home/kendra/projects/NPD-CW-Group-01/shell-script/reports/netwatch_20260927T140001.csv
+[2026-09-27 15:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-27 15:00:01] INFO: intranet (127.0.0.1) is UP
+[2026-09-27 15:00:01] INFO: warehouse-app (127.0.0.1) is UP
+[2026-09-27 15:00:01] INFO: fileserver (127.0.0.1) is UP
+[2026-09-27 15:00:01] INFO: backup-server (127.0.0.1) is UP
+[2026-09-27 15:00:01] INFO: printer-svc (127.0.0.1) is UP
+[2026-09-27 15:00:01] INFO: offline-host (127.0.0.1) is UP
+[2026-09-27 15:00:01] INFO: Inventory: 6 accepted, 0 rejected
+[2026-09-27T15:00:01] inventory loaded: 6 accepted, 0 rejected
+[2026-09-27T15:00:01] previous results loaded
+[2026-09-27T15:00:01] report written: /home/kendra/projects/NPD-CW-Group-01/shell-script/../reports/py_results_20260927T150001.csv
+
+HOSTNAME        SERVICE   PORT    STATE   RESP(s)   
+----------------------------------------------------
+backup-server   ftp       9090    CLOSED  0.0011    
+fileserver      http      8081    CLOSED  0.0021    
+intranet        http      8080    CLOSED  0.0028    
+offline-host    http      9999    CLOSED  0.0021    
+printer-svc     http      9091    CLOSED  0.0035    
+warehouse-app   wms       9000    CLOSED  0.005     
+
+Checked 6 target(s): 0 open, 6 closed, 0 error (0.0% available)
+
+Newly opened : []
+Newly closed : []
+Unchanged    : 1 service(s) (compared against previous run)
+Other changes: []
+
+STATUS: ISSUES DETECTED (exit code 1)
+
+HOSTNAME               ADDRESS          STATUS   SERVICE  PORT    
+intranet               127.0.0.1        UP       http     8080    
+warehouse-app          127.0.0.1        UP       wms      9000    
+fileserver             127.0.0.1        UP       http     8081    
+backup-server          127.0.0.1        UP       ftp      9090    
+printer-svc            127.0.0.1        UP       http     9091    
+offline-host           127.0.0.1        UP       http     9999    
+
+Checks: 94 | UP: 56 | DOWN: 38 | Availability: 59.6%
+Availability by host:
+  backup-server          60.0% (9/15)
+  fileserver             60.0% (9/15)
+  hang-host              0.0% (0/2)
+  intranet               64.7% (11/17)
+  offline-host           60.0% (9/15)
+  printer-svc            60.0% (9/15)
+  warehouse-app          60.0% (9/15)
+Most frequent failing services:
+  http               26 failures
+  wms                6 failures
+  ftp                6 failures
+[2026-09-27 15:00:02] INFO: Run complete — report written to /home/kendra/projects/NPD-CW-Group-01/shell-script/reports/netwatch_20260927T150002.csv
+[2026-09-27 16:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-27 16:00:01] INFO: intranet (127.0.0.1) is UP
+[2026-09-27 16:00:01] INFO: warehouse-app (127.0.0.1) is UP
+[2026-09-27 16:00:01] INFO: fileserver (127.0.0.1) is UP
+[2026-09-27 16:00:01] INFO: backup-server (127.0.0.1) is UP
+[2026-09-27 16:00:01] INFO: printer-svc (127.0.0.1) is UP
+[2026-09-27 16:00:01] INFO: offline-host (127.0.0.1) is UP
+[2026-09-27 16:00:01] INFO: Inventory: 6 accepted, 0 rejected
+[2026-09-27T16:00:02] inventory loaded: 6 accepted, 0 rejected
+[2026-09-27T16:00:02] previous results loaded
+[2026-09-27T16:00:02] report written: /home/kendra/projects/NPD-CW-Group-01/shell-script/../reports/py_results_20260927T160002.csv
+
+HOSTNAME        SERVICE   PORT    STATE   RESP(s)   
+----------------------------------------------------
+backup-server   ftp       9090    CLOSED  0.0007    
+fileserver      http      8081    CLOSED  0.0012    
+intranet        http      8080    CLOSED  0.0018    
+offline-host    http      9999    CLOSED  0.0002    
+printer-svc     http      9091    CLOSED  0.0006    
+warehouse-app   wms       9000    CLOSED  0.0015    
+
+Checked 6 target(s): 0 open, 6 closed, 0 error (0.0% available)
+
+Newly opened : []
+Newly closed : []
+Unchanged    : 6 service(s) (compared against previous run)
+Other changes: []
+
+STATUS: ISSUES DETECTED (exit code 1)
+
+HOSTNAME               ADDRESS          STATUS   SERVICE  PORT    
+intranet               127.0.0.1        UP       http     8080    
+warehouse-app          127.0.0.1        UP       wms      9000    
+fileserver             127.0.0.1        UP       http     8081    
+backup-server          127.0.0.1        UP       ftp      9090    
+printer-svc            127.0.0.1        UP       http     9091    
+offline-host           127.0.0.1        UP       http     9999    
+
+Checks: 106 | UP: 68 | DOWN: 38 | Availability: 64.2%
+Availability by host:
+  backup-server          64.7% (11/17)
+  fileserver             64.7% (11/17)
+  hang-host              0.0% (0/2)
+  intranet               68.4% (13/19)
+  offline-host           64.7% (11/17)
+  printer-svc            64.7% (11/17)
+  warehouse-app          64.7% (11/17)
+Most frequent failing services:
+  http               26 failures
+  wms                6 failures
+  ftp                6 failures
+[2026-09-27 16:00:02] INFO: Run complete — report written to /home/kendra/projects/NPD-CW-Group-01/shell-script/reports/netwatch_20260927T160002.csv
+[2026-09-27 17:00:01] INFO: netwatch.sh starting — inventory=/home/kendra/projects/NPD-CW-Group-01/shell-script/config/inventory.csv timeout=2s report_only=0
+[2026-09-27 17:00:01] INFO: intranet (127.0.0.1) is UP
+[2026-09-27 17:00:01] INFO: warehouse-app (127.0.0.1) is UP
+[2026-09-27 17:00:01] INFO: fileserver (127.0.0.1) is UP
+[2026-09-27 17:00:01] INFO: backup-server (127.0.0.1) is UP
+[2026-09-27 17:00:01] INFO: printer-svc (127.0.0.1) is UP
+[2026-09-27 17:00:01] INFO: offline-host (127.0.0.1) is UP
+[2026-09-27 17:00:01] INFO: Inventory: 6 accepted, 0 rejected
+[2026-09-27T17:00:02] inventory loaded: 6 accepted, 0 rejected
+[2026-09-27T17:00:02] previous results loaded
+[2026-09-27T17:00:02] report written: /home/kendra/projects/NPD-CW-Group-01/shell-script/../reports/py_results_20260927T170002.csv
+
+HOSTNAME        SERVICE   PORT    STATE   RESP(s)   
+----------------------------------------------------
+backup-server   ftp       9090    CLOSED  0.0011    
+fileserver      http      8081    CLOSED  0.0039    
+intranet        http      8080    CLOSED  0.0022    
+offline-host    http      9999    CLOSED  0.0018    
+printer-svc     http      9091    CLOSED  0.0011    
+warehouse-app   wms       9000    CLOSED  0.0025    
+
+Checked 6 target(s): 0 open, 6 closed, 0 error (0.0% available)
+
+Newly opened : []
+Newly closed : []
+Unchanged    : 6 service(s) (compared against previous run)
+Other changes: []
+
+STATUS: ISSUES DETECTED (exit code 1)
+
+HOSTNAME               ADDRESS          STATUS   SERVICE  PORT    
+intranet               127.0.0.1        UP       http     8080    
+warehouse-app          127.0.0.1        UP       wms      9000    
+fileserver             127.0.0.1        UP       http     8081    
+backup-server          127.0.0.1        UP       ftp      9090    
+printer-svc            127.0.0.1        UP       http     9091    
+offline-host           127.0.0.1        UP       http     9999    
+
+Checks: 112 | UP: 74 | DOWN: 38 | Availability: 66.1%
+Availability by host:
+  backup-server          66.7% (12/18)
+  fileserver             66.7% (12/18)
+  hang-host              0.0% (0/2)
+  intranet               70.0% (14/20)
+  offline-host           66.7% (12/18)
+  printer-svc            66.7% (12/18)
+  warehouse-app          66.7% (12/18)
+Most frequent failing services:
+  http               26 failures
+  wms                6 failures
+  ftp                6 failures
+[2026-09-27 17:00:02] INFO: Run complete — report written to /home/kendra/projects/NPD-CW-Group-01/shell-script/reports/netwatch_20260927T170002.csv

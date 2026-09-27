@@ -1,68 +1,68 @@
 [
   {
-    "timestamp": "2026-09-25T13:28:56+05:30",
+    "timestamp": "2026-09-27T17:00:02+05:30",
     "hostname": "backup-server",
     "ip_address": "127.0.0.1",
     "service": "ftp",
     "port": 9090,
     "critical": "no",
-    "state": "TIMEOUT",
-    "response_time": 0.9976,
-    "error_detail": "connection timed out"
+    "state": "CLOSED",
+    "response_time": 0.0011,
+    "error_detail": "connection refused"
   },
   {
-    "timestamp": "2026-09-25T13:28:56+05:30",
+    "timestamp": "2026-09-27T17:00:02+05:30",
     "hostname": "fileserver",
     "ip_address": "127.0.0.1",
     "service": "http",
     "port": 8081,
     "critical": "no",
-    "state": "TIMEOUT",
-    "response_time": 0.9991,
-    "error_detail": "connection timed out"
+    "state": "CLOSED",
+    "response_time": 0.0039,
+    "error_detail": "connection refused"
   },
   {
-    "timestamp": "2026-09-25T13:28:56+05:30",
+    "timestamp": "2026-09-27T17:00:02+05:30",
     "hostname": "intranet",
     "ip_address": "127.0.0.1",
     "service": "http",
     "port": 8080,
     "critical": "yes",
-    "state": "OPEN",
-    "response_time": 0.0031,
-    "error_detail": ""
+    "state": "CLOSED",
+    "response_time": 0.0022,
+    "error_detail": "connection refused"
   },
   {
-    "timestamp": "2026-09-25T13:28:56+05:30",
+    "timestamp": "2026-09-27T17:00:02+05:30",
     "hostname": "offline-host",
     "ip_address": "127.0.0.1",
     "service": "http",
     "port": 9999,
     "critical": "no",
-    "state": "TIMEOUT",
-    "response_time": 0.9961,
-    "error_detail": "connection timed out"
+    "state": "CLOSED",
+    "response_time": 0.0018,
+    "error_detail": "connection refused"
   },
   {
-    "timestamp": "2026-09-25T13:28:56+05:30",
+    "timestamp": "2026-09-27T17:00:02+05:30",
     "hostname": "printer-svc",
     "ip_address": "127.0.0.1",
     "service": "http",
     "port": 9091,
     "critical": "no",
-    "state": "TIMEOUT",
-    "response_time": 0.9972,
-    "error_detail": "connection timed out"
+    "state": "CLOSED",
+    "response_time": 0.0011,
+    "error_detail": "connection refused"
   },
   {
-    "timestamp": "2026-09-25T13:28:56+05:30",
+    "timestamp": "2026-09-27T17:00:02+05:30",
     "hostname": "warehouse-app",
     "ip_address": "127.0.0.1",
     "service": "wms",
     "port": 9000,
     "critical": "yes",
-    "state": "TIMEOUT",
-    "response_time": 1.0003,
-    "error_detail": "connection timed out"
+    "state": "CLOSED",
+    "response_time": 0.0025,
+    "error_detail": "connection refused"
   }
 ]

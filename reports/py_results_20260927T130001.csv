@@ -1,0 +1,7 @@
+timestamp,hostname,ip_address,service,port,critical,state,response_time,error_detail
+2026-09-27T13:00:01+05:30,backup-server,127.0.0.1,ftp,9090,no,CLOSED,0.0031,connection refused
+2026-09-27T13:00:01+05:30,fileserver,127.0.0.1,http,8081,no,CLOSED,0.0026,connection refused
+2026-09-27T13:00:01+05:30,intranet,127.0.0.1,http,8080,yes,OPEN,0.0018,
+2026-09-27T13:00:01+05:30,offline-host,127.0.0.1,http,9999,no,CLOSED,0.0021,connection refused
+2026-09-27T13:00:01+05:30,printer-svc,127.0.0.1,http,9091,no,CLOSED,0.0028,connection refused
+2026-09-27T13:00:01+05:30,warehouse-app,127.0.0.1,wms,9000,yes,CLOSED,0.0044,connection refused
